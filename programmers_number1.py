@@ -5,3 +5,4 @@ def solution(num_list):
     a=num_list.reversed()
     answer = a
     return answer
+print(answer)
