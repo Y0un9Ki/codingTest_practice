@@ -35,3 +35,9 @@ def solution(s):
     if P_number+p_number!=Y_number+y_number:
         answer=False
     return answer
+
+def solution(s):
+    answer = True
+    if s.count('P')+s.count('p') != s.count('Y')+s.count('y'):
+        answer=False
+    return answer
