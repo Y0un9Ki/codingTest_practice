@@ -7,14 +7,32 @@
 # 첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.
 
 
-def solution(s):
-    answer = ''
-    str=s.split(' ')
-    for i in str:
-        for n in range(0,len(i)):
-            if n%2==0:
-                answer+=i[n].upper()
-            else:
-                answer+=i[n]
-        answer+=" "
-    return answer
+# def solution(s):
+#     answer = ''
+#     str=s.split(' ')
+#     for i in str:
+#         for n in range(0,len(i)):
+#             if n%2==0:
+#                 answer+=i[n].upper()
+#             else:
+#                 answer+=i[n]
+#         answer+=" "
+#     return answer
+
+s='hello python'
+print(type(s[5]))
+
+
+# def solution(s):
+#     answer=''
+#     n=0
+#     for i in s:
+#         n+=1
+#         if i==False:
+#             answer+=' '
+#         elif n%2==0:
+#             answer+=s[n-1]
+#         else :
+#             answer+=s[n-1].upper()
+        
+#     return answer
