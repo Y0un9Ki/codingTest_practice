@@ -49,7 +49,7 @@ def solution(s):
             answer+=i
         else:
             if n%2==0:
-                answer+=i
+                answer+=i.lower() #lower함수 안썻다고 틀린거였네 ㄷㄷ
             else:
                 answer+=i.upper()
     return answer
