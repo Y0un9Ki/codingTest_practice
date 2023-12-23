@@ -6,14 +6,32 @@
 # 문자열 s의 길이 : 50 이하의 자연수
 # 문자열 s는 알파벳으로만 이루어져 있습니다.
 
+# def solution(s):
+#     answer = True
+#     p_number=s.count('p')
+#     y_number=s.count('y')
+#     if p_number==y_number:
+#         answer
+#     elif p_number and y_number==0:
+#         answer
+#     else:
+#         answer=False
+#     return answer
+
+# def solution(s):
+#     answer = True
+#     p_number=s.count('p','P')
+#     y_number=s.count('y','Y')
+#     if p_number != y_number:
+#         answer=False
+#     return answer
+
 def solution(s):
     answer = True
+    P_number=s.count('P')
     p_number=s.count('p')
+    Y_number=s.count('Y')
     y_number=s.count('y')
-    if p_number==y_number:
-        answer
-    elif p_number and y_number==0:
-        answer
-    else:
+    if P_number+p_number!=Y_number+y_number:
         answer=False
     return answer
