@@ -13,3 +13,9 @@ def solution(n):
 
     
     return answer
+
+#another solution
+def solution(n):
+    answer='수박'*n
+    result=answer[:n]
+    return result
