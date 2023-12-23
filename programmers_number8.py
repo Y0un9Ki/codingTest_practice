@@ -19,8 +19,8 @@
 #         answer+=" "
 #     return answer
 
-s='hello python'
-print(type(s[5]))
+# s='hello python'
+# print(type(s[5]))
 
 
 # def solution(s):
@@ -36,3 +36,21 @@ print(type(s[5]))
 #             answer+=s[n-1].upper()
         
 #     return answer
+
+
+#더이상 모르겠다...
+def solution(s):
+    answer=''
+    n=0
+    for i in s:
+        n+=1
+        if i==' ':
+            n=0
+            answer+=i
+        else:
+            if n%2==0:
+                answer+=i
+            else:
+                answer+=i.upper()
+    return answer
+        
