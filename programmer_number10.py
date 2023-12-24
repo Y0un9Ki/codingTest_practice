@@ -16,8 +16,8 @@ def solution(food):
     answer = ''  
     result=''
     n=0
-    for i in food:                  
-        n= n+1
+    for i in food:  #for i in food[n+1]로 사용해서 처음에는 food의 첫 요소를 빼주기 위해 썻었으나   
+        n= n+1      #n=0이라는 전역변수에 의해 for의 i가 food[n=0+1]이라는 즉 food[1] 한개의 요소로 for문이 끝나는 문제가 발생했다.
         if i==1:
             pass
         elif i%2==0:
