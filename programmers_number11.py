@@ -33,9 +33,12 @@ def solution(ingredient):
     for i in ingredient:
         ingredient_list.append(i)
         
-        if ingredient_list[-4:]==[1,2,3,1]:
-            del ingredient_list[-4:]
-            answer+=1
-        
+        if ingredient_list[-4:]==[1,2,3,1]: # [1,2,3,1]즉 빵-야채-고기-빵의 순서대로 들어와야 햄버거를 하나 만들수 있다.
+            del ingredient_list[-4:]        # 여기서 가장 키포인트는 뒤에서부터 범위를 잡아서 센다는 것이다. 매우중요!!!
+            answer+=1                       # 내가 처음풀때 1다음에 2다음에 3다음에 1이 연속적으로 들어와야만 햄버거를 만들수 있다 생각해서
+                                            # 계속 1다음에 연속으로2,3,1이 들어올 조건만을 생각했다. 이러니 조건을 만들수가 없었다.
+                                            # 다음에 이런문제를 풀때 정해져 있는 순서에 조건이 들어와야만 결과값이 나오는 문제는
+                                            # 뒤에서부터 범위를 잡는 생각을 해보자!!!  
+
         
     return answer
