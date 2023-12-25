@@ -24,6 +24,6 @@ def solution(food):
             result+=(i//2)*str(n-1)
         elif i%2==1:
             result+=i//2*str(n-1) #'111'
-    answer=result+'0'+result[::-1] #문자열 자료형을 거꾸로 세는 인덱싱 방법이다. [::-1]
+    answer=result+'0'+result[::-1] #문자열 자료형을 거꾸로 세는 인덱싱 방법이다. [::-1] 이것도 매우 중요!!!
      
     return answer
