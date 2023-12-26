@@ -9,5 +9,6 @@ while n<len(list):
     # print(min(list))
     list.remove(min(list))
 # list1.append(min(list))
+    # n+=1 이것때문에 틀림 잘생각해보기
 
 print(list1)
