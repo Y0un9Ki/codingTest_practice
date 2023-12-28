@@ -13,16 +13,41 @@
 
 def solution(A,B):
     answer = 0
-    # while 0<len(A):             #==> 이 풀이법은 효율성이 안좋음.
-    #     answer+=min(A)*max(B)
-    #     A.remove(min(A))
-    #     B.remove(max(B))
+    while 0<len(A):             #==> 이 풀이법은 효율성이 안좋음.
+        answer+=min(A)*max(B)
+        A.remove(min(A))
+        B.remove(max(B))
+
+    return answer
+
+
+
+def solution(A,B):
+    answer = 0
     A.sort()                  ==> 효율성이 좋다.
     B.sort()
     b=B[::-1]             
     for i,j in zip(A,b):    #==> zip 내장함수 사용법을 잘 알아두자. 
-                            # zip(*iterable)은 동일한 개수(길이)로 이루어진 데이터(리스트로 들어옴)들을 묶어서 보낼때 쓰인다.
-        answer+=i*j         # list(zip([1, 2, 3], [4, 5, 6])) 이것의 결과값은 [(1,4),(2,5),(3,6)]으로 나오게 된다.
+        answer+=i*j         # zip(*iterable)은 동일한 개수(길이)로 이루어진 데이터(리스트로 들어옴)들을 묶어서 보낼때 쓰인다.
+                            # 예시로) list(zip([1, 2, 3], [4, 5, 6])) 이것의 결과값은 [(1,4),(2,5),(3,6)]으로 나오게 된다.
+                            # [(1,4),(2,5),(3,6)]에서 i[0]=1,j[0]=4  i[1]=2,j[1]=5... 이런식으로 들어간다.
                             # 즉 우리가 for문에서 여러개의 변수를 한번에 곱해줄 때 쓰일 수 있다.
-    
+    return answer
+
+
+
+def solution(A,B):                  # ==>진짜 효율 안좋은 풀이법
+    answer = 0
+    list_a=[]
+    list_b=[]
+    for i in A:
+        list_a.append(i)
+    for j in B:
+        list_b.append(j)
+    while 0<len(list_a):
+        answer+=min(list_a)*max(list_b)
+        list_a.remove(min(list_a))
+        list_b.remove(max(list_b))
+
+
     return answer
