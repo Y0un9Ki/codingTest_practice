@@ -12,3 +12,5 @@ while n<len(list):
     # n+=1 이것때문에 틀림 잘생각해보기
 
 print(list1)
+a=[1,2,3,4,5]
+print(min(a))
