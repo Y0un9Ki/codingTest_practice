@@ -1,50 +1,48 @@
-POST_MAN = {
-    "product_data": {
-        "name": 'laptop',
-        "rating": [
-          1221, -1 , 1222, -1, 1223, 46, 1224, -1, 1225, 46, 1226,
-          -1, 1227, 46, 1228, -1, 1229, 46, 1230, -1, 1231, 46,
-        ]
-    },
+import pandas as pd
+
+POST_MAN={
+    'a': [
+        1436, 1300, -1, 316, 1575, -1, -1, -1, -1, -1, -1, 26, -1, -1, -1, -1,
+        47, 24766, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1,
+      ],
+      'b': [
+        1443, 1158, -1, 350, 1573, -1, -1, -1, -1, -1, -1, 28, -1, -1, -1, -1,
+        47, 23668, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1,
+      ],
+      'c': [
+        1459, 1316, -1, 394, 1575, -1, -1, -1, -1, -1, -1, 27, -1, -1, -1, -1,
+        47, 24614, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1,
+      ],
+      'd': [
+        1461, 1144, -1, 361, 1575, -1, -1, -1, -1, -1, -1, 28, -1, -1, -1, -1,
+        47, 24277, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1,
+      ],
+      'e': [
+        1443, 1158, -1, 350, 1573, -1, -1, -1, -1, -1, -1, 28, -1, -1, -1, -1,
+        47, 23668, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1,
+      ],
+      'f': [
+        1397, 1198, -1, 339, 1574, -1, -1, -1, -1, -1, -1, 24, -1, -1, -1, -1,
+        47, 22297, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1,
+      ],
 }
 
-# dictionary rating data 
-# 날짜, 평점 데이터 각각분리 후 날짜별 평점 그래프화
-Rating = {
-    'date':[1221, 1222 , 1223],
-    'rating':[0, 4.6, 0 , 4.5]
-}
 
-
-def add_data(list):
-    RESULT={}
-    date_list=[]     # ==> 1. 부분
-    rating_list=[]   # ==> 1. 부분
-    for idx, value in enumerate(list):  # ==> 2.부분
-        if idx%2==0:
-            date_list.append(value)
-        else:
-            if value<0:
-                rating_list.append(0)
-            else:
-                rating_list.append(value/10)
+def minus_data(dict):
+    for idx,value in enumerate(dict.values()): #==> dict는 enumerate 함수를 못쓰지만 values 메서드를 사용해서 리스트로 변환했다.
+        for v in value[:]: # 리스트의 복사본을 만들어줘서 반복문을 사용. value를 변하는 값으로 반복문 안에 넣고 싶을 때 복사본을 넣어서 변하지 않게 만들어준다.
+            if v ==-1:
+                value.remove(v)
                 
+    return dict
 
-    RESULT['date']=date_list
-    RESULT['rating']=rating_list
-    return RESULT
-    
-    
+data = minus_data(POST_MAN)
 
-add_data(POST_MAN["product_data"]['rating'])
-
-
-
-print('RESULT : ' , add_data(POST_MAN["product_data"]['rating']))
-
-
-# TIL
-# 1. dictionary에서 append와 같은 리스트메서드가 없기에 리스트로 변환후 dictionary로 넣어주었다.
-# 2. 리스트에서 인덱스 번호와 그 인덱스 번호에 해당하는 value값을 알기위해 enumerate()라는 함수를 사용.
-# 2. why? dictionary에서 append와 같은 리스트메서드가 없기에 리스트로 변환 후 
-# 2.      인덱스 번호에 따라 dating_list와 rating_list로 나눈 후에 결과값을 보여주기 위해
+df = pd.DataFrame(data) # ==> 데이터 타입 에러 잘 보기
+print(df)
