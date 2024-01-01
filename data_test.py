@@ -1,3 +1,5 @@
+import pandas as pd
+
 POST_MAN = {
     "product_data": {
         "name": 'laptop',
@@ -37,12 +39,12 @@ def add_data(list):
     return RESULT
     
     
+data=add_data(POST_MAN["product_data"]['rating'])
+df=pd.DataFrame(data)
 
-add_data(POST_MAN["product_data"]['rating'])
+print(df)
 
-
-
-print('RESULT : ' , add_data(POST_MAN["product_data"]['rating']))
+# print('RESULT : ' , add_data(POST_MAN["product_data"]['rating']))
 
 
 # TIL
